@@ -1,8 +1,8 @@
 # Maintainer: Klaas Boesche <klaas-dev@boesche.me>
 pkgname=python-dmenuwrap
-pkgver=0.1.0
+pkgver=0.1.1
 pkgrel=1
-pkgdesc="A simple library to provide dmenu with options generated and handled with python."
+pkgdesc="A simple library to provide dmenu with options generated and handled with python. Examples can be found at the url."
 arch=('any')
 url="https://github.com/KaGeBe/${pkgname}"
 license=('custom:BSD 2-clause')
