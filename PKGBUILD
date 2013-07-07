@@ -9,7 +9,7 @@ license=('custom:BSD 2-clause')
 depends=('python')
 options=(!emptydirs)
 source=("https://github.com/KaGeBe/${pkgname}/archive/v${pkgver}.tar.gz")
-md5sums=('4293d54254e563251728731daf93b73b')
+md5sums=('d87f2177f151b18dfee0d54af868b347')
 
 package() {
   cd "$srcdir/$pkgname-$pkgver"
