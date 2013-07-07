@@ -9,13 +9,13 @@ from collections import OrderedDict
 DEFAULT_DMENU_PATH = "/usr/bin/dmenu"
 
 
-def dmenu(options, args, dmenu_path=DEFAULT_DMENU_PATH):
+def dmenu(options, args=[], path=DEFAULT_DMENU_PATH):
     """
     Displays an options menu with the given options by executing dmenu
-    with the provided arguments. Returns the chosen option
+    with the provided list of arguments. Returns the chosen option
     or None if none of the given options was chosen.
     """
-    dmenu = subprocess.Popen([dmenu_path] + args,
+    dmenu = subprocess.Popen([path] + args,
                              stdin=subprocess.PIPE,
                              stdout=subprocess.PIPE)
     option_lines = '\n'.join(map(str, options))
@@ -43,14 +43,14 @@ class DMenu:
         """
         pass
 
-    def run(self, dmenu_path=DEFAULT_DMENU_PATH, dmenu_args=[]):
+    def run(self, args=[], path=DEFAULT_DMENU_PATH):
         """
         Creates the options with the create_options function and passes
-        them to run_dmenu with the additional arguments.
+        them to dmenu with the additional arguments.
         If an option was selected it is passed to the handle_option function.
         """
         options = self.create_options()
-        option = dmenu(options, dmenu_args)
+        option = dmenu(options, args=args, path=path)
         if option:
             self.handle_option(option, options)
 
